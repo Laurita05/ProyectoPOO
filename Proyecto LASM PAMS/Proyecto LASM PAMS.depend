@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1731696821 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\abarrotes.cpp
+	"Abarrotes.h"
+
+1731699990 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\abarrotes.h
+	"Producto.h"
+	<iostream>
+
+1731698197 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\producto.h
+	<iostream>
+
+1731699451 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\bebida.cpp
+	"Bebida.h"
+
+1731699990 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\bebida.h
+	"Producto.h"
+	<iostream>
+
+1731697025 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\main.cpp
+	"Producto.h"
+	"Abarrotes.h"
+	"Alimento.h"
+	"Bebida.h"
+	<iostream>
+
+1731699990 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\alimento.h
+	"Producto.h"
+	<iostream>
+
+1731697025 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\producto.cpp
+	"Producto.h"
+
+1731698433 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\alimento.cpp
+	"Alimento.h"
+
