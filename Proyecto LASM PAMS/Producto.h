@@ -18,6 +18,15 @@ class Producto
         Producto(string,string,float,int);
 
         virtual void mostrarInfo(void);
+
+        friend ostream& operator<<(ostream&, const Producto&);
+        friend istream& operator>>(istream&, Producto&);
+        Producto operator+(const Producto&);
+        Producto operator-(const Producto&);
+        Producto operator*(const Producto&);
+        Producto operator/(const Producto&);
+        Producto operator=(const Producto&);
+        bool operator==(const Producto&);
 };
 
 #endif // PRODUCTO_H
