@@ -3,14 +3,19 @@
 ostream& operator<<(ostream &salida, const Producto &obj)
 {
     salida<<"Nombre: "<<obj.nombre<<", Precio: $"<<obj.precio<<endl;
+    salida<<"Fecha de Caducidad: "<<obj.fechaCaducidad<<", Stock: "<<obj.stock<<endl;
     return salida;
 }
 istream& operator>>(istream &entrada, Producto &obj)
 {
-    cout<<"Ingrese el nuevo nombre del producto: "<<endl;
+    cout<<"Ingrese el nombre del producto: "<<endl;
     entrada>>obj.nombre;
-    cout<<"Ingrese el nuevo precio del producto: "<<endl;
+    cout<<"Ingrese el precio del producto: "<<endl;
     entrada>>obj.precio;
+    cout<<"Ingrese la fecha de caducidad del producto (DD/MM/AAAA): "<<endl;
+    entrada>>obj.fechaCaducidad;
+    cout<<"Ingrese el stock del producto: "<<endl;
+    entrada>>obj.stock;
     return entrada;
 }
 Producto Producto::operator+(const Producto &obj)

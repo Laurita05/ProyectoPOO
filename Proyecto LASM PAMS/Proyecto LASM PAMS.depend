@@ -16,18 +16,19 @@
 	"Producto.h"
 	<iostream>
 
-1731697025 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\main.cpp
+1731719064 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\main.cpp
 	"Producto.h"
 	"Abarrotes.h"
 	"Alimento.h"
 	"Bebida.h"
+	<vector>
 	<iostream>
 
 1731699990 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\alimento.h
 	"Producto.h"
 	<iostream>
 
-1731716149 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\producto.cpp
+1731716537 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\producto.cpp
 	"Producto.h"
 
 1731699990 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\alimento.cpp
