@@ -11,6 +11,7 @@ class Producto
         float precio;
         int stock;
     public:
+
         Producto();
         Producto(string);
         Producto(string,string);
@@ -27,6 +28,8 @@ class Producto
         Producto operator/(const Producto&);
         Producto operator=(const Producto&);
         bool operator==(const Producto&);
+
+        string getNombre(void);
 };
 
 #endif // PRODUCTO_H

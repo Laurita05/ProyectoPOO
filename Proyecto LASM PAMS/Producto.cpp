@@ -94,3 +94,8 @@ void Producto::mostrarInfo(void)
     cout<<"Nombre: "<<nombre<<", Precio: $"<<precio<<endl;
     cout<<"Fecha de Caducidad: "<<fechaCaducidad<<", Stock: "<<stock<<endl;
 }
+
+string Producto::getNombre(void)
+{
+    return nombre;
+}

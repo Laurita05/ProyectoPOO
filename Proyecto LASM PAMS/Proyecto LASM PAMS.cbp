@@ -34,6 +34,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Abarrotes.cpp" />
+		<Unit filename="Abarrotes.h" />
+		<Unit filename="Alimento.cpp" />
+		<Unit filename="Alimento.h" />
+		<Unit filename="Bebida.cpp" />
+		<Unit filename="Bebida.h" />
+		<Unit filename="Inventario.cpp" />
+		<Unit filename="Inventario.h" />
 		<Unit filename="Producto.cpp" />
 		<Unit filename="Producto.h" />
 		<Unit filename="main.cpp" />
