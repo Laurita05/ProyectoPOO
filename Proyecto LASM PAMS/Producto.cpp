@@ -1,9 +1,52 @@
 #include "Producto.h"
 
+friend ostream& operator<<(ostream &salida, const Producto &obj)
+{
+    salida<<"Nombre: "<<obj.nombre<<", Precio: $"<<obj.precio<<endl;
+    return salida;
+}
+friend istream& operator>>(istream &entrada, Producto &obj)
+{
+    cout<<"Ingrese el nuevo nombre del producto: "<<endl;
+    entrada>>obj.nombre;
+    cout<<"Ingrese el nuevo precio del producto: "<<endl;
+    entrada>>obj.precio;
+    return entrada;
+}
+Producto Producto::operator+(const Producto &obj)
+{
+    Producto aux;
+    aux.nombre=nombre+" + "+obj.nombre;
+    aux.precio=precio+" + "+obj.precio;
+    return aux;
+}
+Producto Producto::operator-(const Producto &obj)
+{
+    Producto aux;
+    aux.nombre=nombre+" - "+obj.nombre;
+    aux.precio=precio+" - "+obj.precio;
+    return aux;
+}
+Producto Producto::operator*(const Producto &obj)
+{
+    Producto aux;
+    aux.nombre=nombre+" x "+obj.nombre;
+    aux.precio=precio+" x "+obj.precio;
+    return aux;
+}
+Producto Producto::operator/(const Producto &obj)
+{
+    Producto aux;
+    aux.nombre=nombre+" / "+obj.nombre;
+    aux.precio=precio+" / "+obj.precio;
+    return aux;
+}
+//-----------------------------------------------------
 Producto::Producto()
 {
     //ctor
 }
+//-----------------------------------------------------
 
 Producto::Producto(string nombre)
 {
