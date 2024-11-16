@@ -41,11 +41,19 @@ Producto Producto::operator/(const Producto &obj)
     aux.precio=precio+obj.precio;
     return aux;
 }
-/*Producto Producto::operator=(const Producto &obj);
+Producto Producto::operator=(const Producto &obj)
+{
+    if (this != &obj)
+    {
+        nombre = obj.nombre;
+        precio = obj.precio;
+    }
+    return *this;
+}
 bool Producto::operator==(const Producto &obj)
 {
-    return (nombre == other.nombre && precio == other.precio);
-}*/
+    return (nombre == obj.nombre && precio == obj.precio);
+}
 //-----------------------------------------------------
 Producto::Producto()
 {
