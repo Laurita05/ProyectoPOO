@@ -20,6 +20,8 @@ class Abarrotes: public Producto
 
         void mostrarInfo(void)override;
 
+        friend ostream& operator<<(ostream&, const Abarrotes&);
+        friend istream& operator>>(istream&, Abarrotes&);
         string getCategoria(void);
         void setCategoria(string);
         string getCantidadxPaquete(void);

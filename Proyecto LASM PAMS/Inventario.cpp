@@ -22,6 +22,11 @@ void Inventario::mostrarProductos() {
 }
 
 void Inventario::buscarProducto(string nombre) {
+     if (productos.empty()) {
+        cout << "El inventario está vacío." << endl;
+        return;
+    }
+
      for (auto producto : productos) {
         if (producto->getNombre() == nombre) {
             producto->mostrarInfo();
@@ -32,6 +37,11 @@ void Inventario::buscarProducto(string nombre) {
 }
 void Inventario::eliminarProducto(string nombre)
 {
+     if (productos.empty()) {
+        cout << "El inventario está vacío." << endl;
+        return;
+    }
+
     int i;
     for (size_t i = 0; i < productos.size(); ++i) {
         if (productos[i]->getNombre() == nombre) {

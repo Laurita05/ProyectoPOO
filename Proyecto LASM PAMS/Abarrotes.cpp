@@ -1,6 +1,22 @@
 #include "Abarrotes.h"
 using namespace std;
 
+ostream& operator<<(ostream &salida, const Abarrotes &obj)
+{
+    salida<<static_cast<const Producto&>(obj);
+    salida<<"Categoria: "<<obj.categoria<<", Cantidad por Paquete: "<<obj.cantidadxPaquete<<endl;
+    return salida;
+}
+istream& operator>>(istream &entrada, Abarrotes &obj)
+{
+    entrada>>static_cast<Producto&>(obj);
+    cout<<"Ingrese la categoria del producto: "<<endl;
+    entrada>>obj.categoria;
+    cout<<"Ingrese la cantidad por paquete: "<<endl;
+    entrada>>obj.cantidadxPaquete;
+    return entrada;
+}
+//-----------------------------------------------------
 Abarrotes::Abarrotes()
 {
     //ctor

@@ -2,7 +2,7 @@
 1731699990 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\abarrotes.cpp
 	"Abarrotes.h"
 
-1731699990 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\abarrotes.h
+1731810692 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\abarrotes.h
 	"Producto.h"
 	<iostream>
 
@@ -16,7 +16,7 @@
 	"Producto.h"
 	<iostream>
 
-1731731367 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\main.cpp
+1731731884 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\main.cpp
 	"Inventario.h"
 	"Producto.h"
 	"Abarrotes.h"
