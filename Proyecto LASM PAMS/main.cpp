@@ -10,10 +10,6 @@ using namespace std;
 
 int main()
 {
-
-    //----------------------------------------------------------------------------------
-    //----------------------------------------------------------------------------------
-    //----------------------------------------------------------------------------------
     Inventario inventario;
     int opcion, subOpcion;
 
@@ -86,6 +82,7 @@ int main()
 
             case 2: {
                 string nombre;
+                if (inventario.inventarioVacio()) {break;}
                 cout << "Ingrese el nombre del producto a buscar: ";
                 cin >> nombre;
                 inventario.buscarProducto(nombre);
@@ -93,12 +90,14 @@ int main()
             }
             case 3: {
                 string nombre;
+                if (inventario.inventarioVacio()) {break;}
                 cout << "Ingrese el nombre del producto a eliminar: ";
                 cin >> nombre;
                 inventario.eliminarProducto(nombre);
                 break;
             }
             case 4: {
+                if (inventario.inventarioVacio()) {break;}
                 inventario.mostrarProductos();
                 break;
             }
@@ -112,9 +111,7 @@ int main()
         }
         system("PAUSE");
     } while (opcion != 5);
-    //----------------------------------------------------------------------------------
-    //----------------------------------------------------------------------------------
-    //----------------------------------------------------------------------------------
+
     return 0;
 }
 

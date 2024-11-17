@@ -15,7 +15,7 @@ class Inventario
         vector<Producto*> productos;
     public:
     Inventario();
-
+    bool inventarioVacio(void);
     void agregarProducto(Producto*);
     void mostrarProductos(void);
     void buscarProducto(string);

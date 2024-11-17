@@ -16,7 +16,7 @@
 	"Producto.h"
 	<iostream>
 
-1731817080 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\main.cpp
+1731886441 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\main.cpp
 	"Inventario.h"
 	"Producto.h"
 	"Abarrotes.h"
@@ -36,10 +36,10 @@
 1731815289 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\alimento.cpp
 	"Alimento.h"
 
-1731814495 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\inventario.cpp
+1731886423 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\inventario.cpp
 	"Inventario.h"
 
-1731731367 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\inventario.h
+1731886423 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\inventario.h
 	"Producto.h"
 	"Abarrotes.h"
 	"Alimento.h"

@@ -4,29 +4,28 @@ Inventario::Inventario()
 {
     //ctor
 }
-
+bool Inventario::inventarioVacio(){
+    if (productos.empty()) {
+        cout << "El inventario está vacío. Ingrese algún producto primero, por favor." << endl;
+        return true;
+    }
+    return false;
+}
 void Inventario::agregarProducto(Producto* producto) {
     productos.push_back(producto);
 }
 
 void Inventario::mostrarProductos() {
-    if (productos.empty()) {
-        cout << "El inventario está vacío." << endl;
-        return;
-    }
-
+    bool vacio=false;
     for (auto producto : productos) {
         producto->mostrarInfo();
         cout << "-----------------------------" << endl;
     }
 }
 
-void Inventario::buscarProducto(string nombre) {
-     if (productos.empty()) {
-        cout << "El inventario está vacío." << endl;
-        return;
-    }
-
+void Inventario::buscarProducto(string nombre)
+{
+    bool vacio=false;
      for (auto producto : productos) {
         if (producto->getNombre() == nombre) {
             producto->mostrarInfo();
@@ -37,11 +36,7 @@ void Inventario::buscarProducto(string nombre) {
 }
 void Inventario::eliminarProducto(string nombre)
 {
-     if (productos.empty()) {
-        cout << "El inventario está vacío." << endl;
-        return;
-    }
-
+    bool vacio=false;
     for (size_t i = 0; i < productos.size(); ++i) {
         if (productos[i]->getNombre() == nombre) {
             delete productos[i]; // Liberar la memoria del producto
