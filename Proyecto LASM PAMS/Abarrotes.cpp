@@ -38,8 +38,8 @@ Abarrotes::Abarrotes(string nombre,string fechaCaducidad,float precio,int stock,
 
 void Abarrotes::mostrarInfo(void)
 {
-    cout<<"Categoria: "<<categoria<<", Cantidad por paquete: "<<cantidadxPaquete<<endl;
     Producto::mostrarInfo();
+    cout<<"Categoria: "<<categoria<<", Cantidad por paquete: "<<cantidadxPaquete<<endl;
 }
 
 string Abarrotes::getCategoria(void)

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1731699990 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\abarrotes.cpp
+1731815289 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\abarrotes.cpp
 	"Abarrotes.h"
 
 1731810692 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\abarrotes.h
@@ -9,14 +9,14 @@
 1731731304 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\producto.h
 	<iostream>
 
-1731699990 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\bebida.cpp
+1731815289 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\bebida.cpp
 	"Bebida.h"
 
-1731699990 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\bebida.h
+1731814956 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\bebida.h
 	"Producto.h"
 	<iostream>
 
-1731731884 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\main.cpp
+1731817080 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\main.cpp
 	"Inventario.h"
 	"Producto.h"
 	"Abarrotes.h"
@@ -24,18 +24,19 @@
 	"Bebida.h"
 	<vector>
 	<iostream>
+	<cstdlib>
 
-1731699990 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\alimento.h
+1731814913 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\alimento.h
 	"Producto.h"
 	<iostream>
 
 1731731304 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\producto.cpp
 	"Producto.h"
 
-1731699990 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\alimento.cpp
+1731815289 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\alimento.cpp
 	"Alimento.h"
 
-1731731426 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\inventario.cpp
+1731814495 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\inventario.cpp
 	"Inventario.h"
 
 1731731367 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\inventario.h

@@ -20,9 +20,10 @@ class Alimento: public Producto
 
         void mostrarInfo(void)override;
 
+        friend ostream& operator<<(ostream&, const Alimento&);
+        friend istream& operator>>(istream&, Alimento&);
         string getTipo(void);
         void setTipo(string);
-
         int getGramos(void);
         void setGramos(int);
 };

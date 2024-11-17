@@ -1,6 +1,22 @@
 #include "Alimento.h"
 using namespace std;
 
+ostream& operator<<(ostream &salida, const Alimento &obj)
+{
+    salida<<static_cast<const Producto&>(obj);
+    salida<<"Tipo: "<<obj.tipo<<", Gramos: "<<obj.gramos<<endl;
+    return salida;
+}
+istream& operator>>(istream &entrada, Alimento &obj)
+{
+    entrada>>static_cast<Producto&>(obj);
+    cout<<"Ingrese el tipo del producto: "<<endl;
+    entrada>>obj.tipo;
+    cout<<"Ingrese los gramos: "<<endl;
+    entrada>>obj.gramos;
+    return entrada;
+}
+//-----------------------------------------------------
 Alimento::Alimento()
 {
     //ctor
@@ -22,8 +38,8 @@ Alimento::Alimento(string nombre,string fechaCaducidad,float precio,int stock,st
 
 void Alimento::mostrarInfo(void)
 {
-    cout<<"Tipo: "<<tipo<<", Gramos: "<<gramos<<endl;
     Producto::mostrarInfo();
+    cout<<"Tipo: "<<tipo<<", Gramos: "<<gramos<<endl;
 }
 
 string Alimento::getTipo(void)

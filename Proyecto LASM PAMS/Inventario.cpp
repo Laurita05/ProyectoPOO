@@ -42,7 +42,6 @@ void Inventario::eliminarProducto(string nombre)
         return;
     }
 
-    int i;
     for (size_t i = 0; i < productos.size(); ++i) {
         if (productos[i]->getNombre() == nombre) {
             delete productos[i]; // Liberar la memoria del producto
