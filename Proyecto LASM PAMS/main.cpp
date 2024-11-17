@@ -10,10 +10,7 @@ using namespace std;
 
 int main()
 {
-    cout<<"Laura Alejandra Santana Martínez"<<endl;
-    cout<<"Pablo Artemio Medina Sahagun"<<endl;
-    cout<<"Programación Orientada a Objetos"<<endl;
-    cout<<"Tienda de Abarrotes ''El Fierrote'' "<<endl;
+
     //----------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------
@@ -22,6 +19,13 @@ int main()
 
     do {
         system("CLS");
+        cout<<"/ / / / / / / / / / / / / / / / / / / / / / / /"<<endl;
+        cout<<"Laura Alejandra Santana Martínez"<<endl;
+        cout<<"Pablo Artemio Medina Sahagun"<<endl;
+        cout<<"Programación Orientada a Objetos"<<endl;
+        cout<<"/ / / / / / / / / / / / / / / / / / / / / / / /"<<endl;
+        cout<<"      \nTienda de Abarrotes ''El Fierrote'' "<<endl;
+        cout<<"- - - - - - - -Menu Principal- - - - - - - -"<<endl;
         cout << "1. Agregar producto\n";
         cout << "2. Buscar producto\n";
         cout << "3. Eliminar producto\n";
@@ -31,9 +35,9 @@ int main()
         cin >> opcion;
 
         switch (opcion) {
-            case 1: {
-                //do {
-                //system("CLS");
+            case 1: { //CASE 1
+                    system("CLS");
+                    cout<<"- - - - - - - -Menu de Ingreso- - - - - - - -"<<endl;
                     cout<<"Que tipo de producto desea ingresar?"<<endl;
                     cout << "1. Agregar alimento"<<endl;
                     cout << "2. Agregar bebida"<<endl;
@@ -44,6 +48,7 @@ int main()
 
                     switch (subOpcion) {
                         case 1: {
+                            cout<<"- - - - - -ALIMENTO- - - - - -"<<endl;
                             Alimento* alimento = new Alimento();
                             cin >> *alimento;
                             inventario.agregarProducto(alimento);
@@ -51,6 +56,7 @@ int main()
                         }
 
                         case 2: {
+                            cout<<"- - - - - -BEBIDA- - - - - -"<<endl;
                             Bebida* bebida = new Bebida();
                             cin >> *bebida;
                             inventario.agregarProducto(bebida);
@@ -58,6 +64,7 @@ int main()
                         }
 
                         case 3: {
+                            cout<<"- - - - - -ABARROTES- - - - - -"<<endl;
                             Abarrotes* abarrotes = new Abarrotes();
                             cin >> *abarrotes;
                             inventario.agregarProducto(abarrotes);
@@ -71,12 +78,11 @@ int main()
                         default: {
                             cout << "Opción inválida. Por favor, elige otra opción." << endl;
                             break;
+                            }
                         }
-                   // system("PAUSE");
-                    //} while (subOpcion != 4);
-                }
+                        system("PAUSE");
                 break;
-            }
+            }//CASE 1
 
             case 2: {
                 string nombre;
