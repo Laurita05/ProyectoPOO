@@ -3,7 +3,6 @@
 #include "Abarrotes.h"
 #include "Alimento.h"
 #include "Bebida.h"
-#include <vector>
 #include <iostream>
 #include <cstdlib>
 using namespace std;

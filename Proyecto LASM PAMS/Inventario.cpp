@@ -16,7 +16,6 @@ void Inventario::agregarProducto(Producto* producto) {
 }
 
 void Inventario::mostrarProductos() {
-    bool vacio=false;
     for (auto producto : productos) {
         producto->mostrarInfo();
         cout << "-----------------------------" << endl;
@@ -25,7 +24,6 @@ void Inventario::mostrarProductos() {
 
 void Inventario::buscarProducto(string nombre)
 {
-    bool vacio=false;
      for (auto producto : productos) {
         if (producto->getNombre() == nombre) {
             producto->mostrarInfo();
@@ -36,13 +34,22 @@ void Inventario::buscarProducto(string nombre)
 }
 void Inventario::eliminarProducto(string nombre)
 {
-    bool vacio=false;
+    char confirmacion;
     for (size_t i = 0; i < productos.size(); ++i) {
         if (productos[i]->getNombre() == nombre) {
-            delete productos[i]; // Liberar la memoria del producto
-            productos.erase(productos.begin() + i); // Eliminar el producto del vector
-            cout << "Producto eliminado." << endl;
-            return;
+            cout<<"Esta seguro de que desea eliminar este producto? (S = Si, N = No)\n";
+            cin>>confirmacion;
+            if(confirmacion=='S' || confirmacion=='s')
+            {
+                delete productos[i]; // Liberar la memoria del producto
+                productos.erase(productos.begin() + i); // Eliminar el producto del vector
+                cout << "Producto eliminado." << endl;
+                return;
+            }
+            else{
+                cout<<"Eliminación cancelada\n";
+                return;
+            }
         }
     }
     cout << "Producto no encontrado." << endl;
