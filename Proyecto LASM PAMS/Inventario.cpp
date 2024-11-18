@@ -4,6 +4,7 @@ Inventario::Inventario()
 {
     //ctor
 }
+//------------------------------------> ¿Esta vacio el inventario? <------------------------------------
 bool Inventario::inventarioVacio(){
     if (productos.empty()) {
         cout << "El inventario está vacío. Ingrese algún producto primero, por favor." << endl;
@@ -11,10 +12,13 @@ bool Inventario::inventarioVacio(){
     }
     return false;
 }
+
+//------------------------------------> Ingresar Productos <------------------------------------
 void Inventario::agregarProducto(Producto* producto) {
     productos.push_back(producto);
 }
 
+//------------------------------------> Mostrar Todos los Productos <------------------------------------
 void Inventario::mostrarProductos() {
     for (auto producto : productos) {
         producto->mostrarInfo();
@@ -22,6 +26,7 @@ void Inventario::mostrarProductos() {
     }
 }
 
+//------------------------------------> Buscar un Producto <------------------------------------
 void Inventario::buscarProducto(string nombre)
 {
      for (auto producto : productos) {
@@ -32,12 +37,14 @@ void Inventario::buscarProducto(string nombre)
     }
     cout << "Producto no encontrado." << endl;
 }
+
+//------------------------------------> Eliminar Producto <------------------------------------
 void Inventario::eliminarProducto(string nombre)
 {
     char confirmacion;
     for (size_t i = 0; i < productos.size(); ++i) {
         if (productos[i]->getNombre() == nombre) {
-            cout<<"Esta seguro de que desea eliminar este producto? (S = Si, N = No)\n";
+            cout<<"¿Esta seguro de que desea eliminar este producto? (S = Si, N = No)\n";
             cin>>confirmacion;
             if(confirmacion=='S' || confirmacion=='s')
             {
@@ -53,12 +60,4 @@ void Inventario::eliminarProducto(string nombre)
         }
     }
     cout << "Producto no encontrado." << endl;
-}
-
-Inventario::~Inventario()
-{
-    for (auto producto : productos)
-    {
-        delete producto;
-    }
 }

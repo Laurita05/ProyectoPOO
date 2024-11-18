@@ -34,7 +34,7 @@ Alimento::Alimento(string nombre,string fechaCaducidad,float precio,int stock,st
 void Alimento::mostrarInfo(void)
 {
     Producto::mostrarInfo();
-    cout<<"Tipo: "<<tipo<<", Gramos: "<<gramos<<endl;
+    cout<<"Tipo: "<<tipo<<" - - - - -   Gramos: "<<gramos<<endl;
 }
 
 string Alimento::getTipo(void)

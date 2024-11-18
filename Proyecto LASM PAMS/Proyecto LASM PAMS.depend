@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1731905995 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\abarrotes.cpp
+1731955218 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\abarrotes.cpp
 	"Abarrotes.h"
 
 1731810692 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\abarrotes.h
@@ -9,14 +9,14 @@
 1731907541 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\producto.h
 	<iostream>
 
-1731905995 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\bebida.cpp
+1731955219 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\bebida.cpp
 	"Bebida.h"
 
 1731814956 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\bebida.h
 	"Producto.h"
 	<iostream>
 
-1731899068 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\main.cpp
+1731958500 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\main.cpp
 	"Inventario.h"
 	"Producto.h"
 	"Abarrotes.h"
@@ -24,21 +24,23 @@
 	"Bebida.h"
 	<iostream>
 	<cstdlib>
+	<locale>
+	<wchar.h>
 
 1731814913 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\alimento.h
 	"Producto.h"
 	<iostream>
 
-1731904496 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\producto.cpp
+1731955218 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\producto.cpp
 	"Producto.h"
 
-1731905995 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\alimento.cpp
+1731955218 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\alimento.cpp
 	"Alimento.h"
 
-1731906871 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\inventario.cpp
+1731960207 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\inventario.cpp
 	"Inventario.h"
 
-1731906871 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\inventario.h
+1731959897 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\inventario.h
 	"Producto.h"
 	"Abarrotes.h"
 	"Alimento.h"

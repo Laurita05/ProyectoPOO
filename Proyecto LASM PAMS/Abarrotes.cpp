@@ -4,7 +4,7 @@ using namespace std;
 istream& operator>>(istream &entrada, Abarrotes &obj)
 {
     entrada>>static_cast<Producto&>(obj);
-    cout<<"Ingrese la categoria del producto: "<<endl;
+    cout<<"Ingrese la categoría del producto: "<<endl;
     entrada.ignore();
     getline(entrada, obj.categoria);
     cout<<"Ingrese la cantidad por paquete: "<<endl;
@@ -34,7 +34,7 @@ Abarrotes::Abarrotes(string nombre,string fechaCaducidad,float precio,int stock,
 void Abarrotes::mostrarInfo(void)
 {
     Producto::mostrarInfo();
-    cout<<"Categoria: "<<categoria<<", Cantidad por paquete: "<<cantidadxPaquete<<endl;
+    cout<<"Categoría: "<<categoria<<" - - - - -   Cantidad por paquete: "<<cantidadxPaquete<<endl;
 }
 
 string Abarrotes::getCategoria(void)

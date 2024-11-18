@@ -92,8 +92,8 @@ Producto::Producto(string nombre, string fechaCaducidad, float precio,int stock)
 
 void Producto::mostrarInfo(void)
 {
-    cout<<"Nombre: "<<nombre<<", Precio: $"<<precio<<endl;
-    cout<<"Fecha de Caducidad: "<<fechaCaducidad<<", Stock: "<<stock<<endl;
+    cout<<"Nombre: "<<nombre<<" - - - - -   Precio: $"<<precio<<endl;
+    cout<<"Fecha de Caducidad: "<<fechaCaducidad<<" - - - - -   Stock: "<<stock<<endl;
 }
 
 string Producto::getNombre(void)

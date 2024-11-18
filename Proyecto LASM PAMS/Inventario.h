@@ -12,7 +12,7 @@ using namespace std;
 class Inventario
 {
     private:
-        vector<Producto*> productos;
+        vector<Producto*> productos;//este es para el inventario en general
     public:
     Inventario();
     bool inventarioVacio(void);
@@ -20,7 +20,6 @@ class Inventario
     void mostrarProductos(void);
     void buscarProducto(string);
     void eliminarProducto(string);
-    ~Inventario(); // Destructor
 
 };
 

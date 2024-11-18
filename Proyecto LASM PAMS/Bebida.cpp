@@ -7,7 +7,7 @@ istream& operator>>(istream &entrada, Bebida &obj)
     cout<<"Ingrese el sabor del producto: "<<endl;
     entrada.ignore();
     getline(entrada, obj.sabor);
-    cout<<"Ingrese los millilitros: "<<endl;
+    cout<<"Ingrese los mililitros: "<<endl;
     entrada>>obj.mililitros;
     return entrada;
 }
@@ -34,7 +34,7 @@ Bebida::Bebida(string nombre,string fechaCaducidad,float precio,int stock,string
 void Bebida::mostrarInfo(void)
 {
     Producto::mostrarInfo();
-    cout<<"Sabor: "<<sabor<<", Mililitros: "<<mililitros<<endl;
+    cout<<"Sabor: "<<sabor<<" - - - - -   Mililitros: "<<mililitros<<endl;
 }
 
 string Bebida::getSabor(void)

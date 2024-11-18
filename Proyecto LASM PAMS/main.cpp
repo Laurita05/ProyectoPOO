@@ -5,10 +5,14 @@
 #include "Bebida.h"
 #include <iostream>
 #include <cstdlib>
+#include <locale>
+#include <wchar.h>
+
 using namespace std;
 
 int main()
 {
+    setlocale(LC_ALL, "");
     Inventario inventario;
     int opcion, subOpcion;
 
@@ -20,24 +24,25 @@ int main()
         cout<<"Programación Orientada a Objetos"<<endl;
         cout<<"/ / / / / / / / / / / / / / / / / / / / / / / /"<<endl;
         cout<<"      \nTienda de Abarrotes ''El Fierrote'' "<<endl;
-        cout<<"- - - - - - - -Menu Principal- - - - - - - -"<<endl;
+        cout<<"- - - - - - - -Menú Principal- - - - - - - -"<<endl;
         cout << "1. Agregar producto\n";
         cout << "2. Buscar producto\n";
         cout << "3. Eliminar producto\n";
         cout << "4. Mostrar todos los productos\n";
-        cout << "5. Salir\n";
+        cout << "5. Mostradorcito\n";
+        cout << "6. Salir\n";
         cout << "Elige una opción: ";
         cin >> opcion;
 
         switch (opcion) {
             case 1: { // - - - -INGRESAR PRODUCTOS- - - -
                     system("CLS");
-                    cout<<"- - - - - - - -Menu de Ingreso- - - - - - - -"<<endl;
+                    cout<<"- - - - - - - -Menú de Ingreso- - - - - - - -"<<endl;
                     cout<<"Que tipo de producto desea ingresar?"<<endl;
                     cout << "1. Agregar alimento"<<endl;
                     cout << "2. Agregar bebida"<<endl;
                     cout << "3. Agregar abarrotes"<<endl;
-                    cout << "4. Volver al menu principal"<<endl;
+                    cout << "4. Volver al menú principal"<<endl;
                     cout << "Elige una opción: ";
                     cin >> subOpcion;
 
@@ -67,7 +72,7 @@ int main()
                         }
 
                         case 4: {
-                            cout<<"Saliendo al menu principal...\n";
+                            cout<<"Saliendo al menú principal...\n";
                             break;
                         }
                         default: {
@@ -102,7 +107,11 @@ int main()
                 inventario.mostrarProductos();
                 break;
             }
-            case 5: {
+            case 5: {// - - - -Yujuu rebajas de verano (MOSTRADORCITO)- - - -
+
+                break;
+            }
+            case 6: {// - - - -SALIR- - - -
                 cout << "¡Hasta luego!" << endl;
                 break;
             }
@@ -111,7 +120,7 @@ int main()
                 break;
         }
         system("PAUSE");
-    } while (opcion != 5);
+    } while (opcion != 6);
 
     return 0;
 }
