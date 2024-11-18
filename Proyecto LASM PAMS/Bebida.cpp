@@ -1,17 +1,12 @@
 #include "Bebida.h"
 using namespace std;
 
-ostream& operator<<(ostream &salida, const Bebida &obj)
-{
-    salida<<static_cast<const Producto&>(obj);
-    salida<<"Sabor: "<<obj.sabor<<", Mililitros: "<<obj.mililitros<<endl;
-    return salida;
-}
 istream& operator>>(istream &entrada, Bebida &obj)
 {
     entrada>>static_cast<Producto&>(obj);
     cout<<"Ingrese el sabor del producto: "<<endl;
-    entrada>>obj.sabor;
+    entrada.ignore();
+    getline(entrada, obj.sabor);
     cout<<"Ingrese los millilitros: "<<endl;
     entrada>>obj.mililitros;
     return entrada;

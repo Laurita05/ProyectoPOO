@@ -1,17 +1,12 @@
 #include "Alimento.h"
 using namespace std;
 
-ostream& operator<<(ostream &salida, const Alimento &obj)
-{
-    salida<<static_cast<const Producto&>(obj);
-    salida<<"Tipo: "<<obj.tipo<<", Gramos: "<<obj.gramos<<endl;
-    return salida;
-}
 istream& operator>>(istream &entrada, Alimento &obj)
 {
     entrada>>static_cast<Producto&>(obj);
     cout<<"Ingrese el tipo del producto: "<<endl;
-    entrada>>obj.tipo;
+    entrada.ignore();
+    getline(entrada, obj.tipo);
     cout<<"Ingrese los gramos: "<<endl;
     entrada>>obj.gramos;
     return entrada;

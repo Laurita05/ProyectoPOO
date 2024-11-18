@@ -24,8 +24,8 @@ class Producto
         friend istream& operator>>(istream&, Producto&);
         Producto operator+(const Producto&);
         Producto operator-(const Producto&);
-        Producto operator*(const Producto&);
-        Producto operator/(const Producto&);
+        Producto operator*(int);
+        Producto operator/(int);
         Producto operator=(const Producto&);
         bool operator==(const Producto&);
 

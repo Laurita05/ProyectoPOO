@@ -2,8 +2,7 @@
 
 ostream& operator<<(ostream &salida, const Producto &obj)
 {
-    salida<<"Nombre: "<<obj.nombre<<", Precio: $"<<obj.precio<<endl;
-    salida<<"Fecha de Caducidad: "<<obj.fechaCaducidad<<", Stock: "<<obj.stock<<endl;
+    salida<<"Nombre: "<<obj.nombre<<" - - - - -  Precio: $"<<obj.precio<<endl;
     return salida;
 }
 istream& operator>>(istream &entrada, Producto &obj)
@@ -31,21 +30,21 @@ Producto Producto::operator-(const Producto &obj)
 {
     Producto aux;
     aux.nombre=nombre+" - "+obj.nombre;
-    aux.precio=precio+obj.precio;
+    aux.precio=precio-obj.precio;
     return aux;
 }
-Producto Producto::operator*(const Producto &obj)
+Producto Producto::operator*(int cantidad)
 {
     Producto aux;
-    aux.nombre=nombre+" x "+obj.nombre;
-    aux.precio=precio+obj.precio;
+    aux.nombre=nombre+" x "+to_string(cantidad);
+    aux.precio=precio*cantidad;
     return aux;
 }
-Producto Producto::operator/(const Producto &obj)
+Producto Producto::operator/(int cantidad)
 {
     Producto aux;
-    aux.nombre=nombre+" / "+obj.nombre;
-    aux.precio=precio+obj.precio;
+    aux.nombre=nombre+" / "+to_string(cantidad);
+    aux.precio=precio/cantidad;
     return aux;
 }
 Producto Producto::operator=(const Producto &obj)
