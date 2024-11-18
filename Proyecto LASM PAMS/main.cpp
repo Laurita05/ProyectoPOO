@@ -30,7 +30,7 @@ int main()
         cin >> opcion;
 
         switch (opcion) {
-            case 1: { //CASE 1
+            case 1: { // - - - -INGRESAR PRODUCTOS- - - -
                     system("CLS");
                     cout<<"- - - - - - - -Menu de Ingreso- - - - - - - -"<<endl;
                     cout<<"Que tipo de producto desea ingresar?"<<endl;
@@ -77,25 +77,27 @@ int main()
                         }
                         system("PAUSE");
                 break;
-            }//CASE 1
+            }// FIN DEL CASE 1
 
-            case 2: {
+            case 2: {// - - - -BUSCAR UN PRODUCTO- - - -
                 string nombre;
                 if (inventario.inventarioVacio()) {break;}
                 cout << "Ingrese el nombre del producto a buscar: ";
-                cin >> nombre;
+                cin.ignore();
+                getline(cin, nombre);
                 inventario.buscarProducto(nombre);
                 break;
             }
-            case 3: {
+            case 3: {// - - - -ELIMINAR PRODUCTOS- - - -
                 string nombre;
                 if (inventario.inventarioVacio()) {break;}
                 cout << "Ingrese el nombre del producto a eliminar: ";
-                cin >> nombre;
+                cin.ignore();
+                getline(cin, nombre);
                 inventario.eliminarProducto(nombre);
                 break;
             }
-            case 4: {
+            case 4: {// - - - -MOSTRAR PRODUCTOS- - - -
                 if (inventario.inventarioVacio()) {break;}
                 inventario.mostrarProductos();
                 break;

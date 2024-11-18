@@ -11,7 +11,8 @@ istream& operator>>(istream &entrada, Abarrotes &obj)
 {
     entrada>>static_cast<Producto&>(obj);
     cout<<"Ingrese la categoria del producto: "<<endl;
-    entrada>>obj.categoria;
+    entrada.ignore();
+    getline(entrada, obj.categoria);
     cout<<"Ingrese la cantidad por paquete: "<<endl;
     entrada>>obj.cantidadxPaquete;
     return entrada;

@@ -9,11 +9,13 @@ ostream& operator<<(ostream &salida, const Producto &obj)
 istream& operator>>(istream &entrada, Producto &obj)
 {
     cout<<"Ingrese el nombre del producto: "<<endl;
-    entrada>>obj.nombre;
+    entrada.ignore();
+    getline(entrada, obj.nombre);
     cout<<"Ingrese el precio del producto: "<<endl;
     entrada>>obj.precio;
     cout<<"Ingrese la fecha de caducidad del producto (DD/MM/AAAA): "<<endl;
-    entrada>>obj.fechaCaducidad;
+    entrada.ignore();
+    getline(entrada, obj.fechaCaducidad);
     cout<<"Ingrese el stock del producto: "<<endl;
     entrada>>obj.stock;
     return entrada;
