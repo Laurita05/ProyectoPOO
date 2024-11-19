@@ -14,7 +14,7 @@ int main()
 {
     setlocale(LC_ALL, "");//Esto es para que se pongan los acentos en todo :D
     Inventario inventario;//Declaración del objeto inventario, de la clase Inventario valga la redundancia
-    int opcion, subOpcion;//Opciones para el switch del menú y del sub-menú
+    char opcion, subOpcion;//Opciones para el switch del menú y del sub-menú
 
     Producto p1("Manzana","27/11/2024",12.75, 100);// prueba
     Producto p2("Pera","27/11/2024",10.5, 88);// prueba
@@ -46,7 +46,7 @@ int main()
         cin >> opcion;
 
         switch (opcion) {
-            case 1: { // - - - -INGRESAR PRODUCTOS- - - -
+            case '1': { // - - - -INGRESAR PRODUCTOS- - - -
                     system("CLS");
                     cout<<"- - - - - - - -Menú de Ingreso- - - - - - - -"<<endl;
                     cout<<"Que tipo de producto desea ingresar?"<<endl;
@@ -58,7 +58,7 @@ int main()
                     cin >> subOpcion;
 
                     switch (subOpcion) {
-                        case 1: {
+                        case '1': {
                             cout<<"- - - - - -ALIMENTO- - - - - -"<<endl;
                             Alimento* alimento = new Alimento();
                             cin >> *alimento;
@@ -66,7 +66,7 @@ int main()
                             break;
                         }
 
-                        case 2: {
+                        case '2': {
                             cout<<"- - - - - -BEBIDA- - - - - -"<<endl;
                             Bebida* bebida = new Bebida();
                             cin >> *bebida;
@@ -74,7 +74,7 @@ int main()
                             break;
                         }
 
-                        case 3: {
+                        case '3': {
                             cout<<"- - - - - -ABARROTES- - - - - -"<<endl;
                             Abarrotes* abarrotes = new Abarrotes();
                             cin >> *abarrotes;
@@ -82,7 +82,7 @@ int main()
                             break;
                         }
 
-                        case 4: {
+                        case '4': {
                             cout<<"Saliendo al menú principal...\n";
                             break;
                         }
@@ -95,7 +95,7 @@ int main()
                 break;
             }// FIN DEL CASE 1
 
-            case 2: {// - - - -BUSCAR UN PRODUCTO- - - -
+            case '2': {// - - - -BUSCAR UN PRODUCTO- - - -
                 string nombre;
                 if (inventario.inventarioVacio()) {break;}
                 cout << "Ingrese el nombre del producto a buscar: ";
@@ -104,7 +104,7 @@ int main()
                 inventario.buscarProducto(nombre);
                 break;
             }
-            case 3: {// - - - -ELIMINAR PRODUCTOS- - - -
+            case '3': {// - - - -ELIMINAR PRODUCTOS- - - -
                 string nombre;
                 if (inventario.inventarioVacio()) {break;}
                 cout << "Ingrese el nombre del producto a eliminar: ";
@@ -113,12 +113,12 @@ int main()
                 inventario.eliminarProducto(nombre);
                 break;
             }
-            case 4: {// - - - -MOSTRAR PRODUCTOS- - - -
+            case '4': {// - - - -MOSTRAR PRODUCTOS- - - -
                 if (inventario.inventarioVacio()) {break;}
                 inventario.mostrarProductos();
                 break;
             }
-            case 5: {// - - - -Sobrecarguitas- - - -
+            case '5': {// - - - -Sobrecarguitas- - - -
                 cout << "Producto 1: " << p1 << endl;
                 cout << "Producto 2: " << p2 << endl;
                 cout << "Producto 3: " << p3 << endl;
@@ -146,7 +146,7 @@ int main()
 
                 break;
             }
-            case 6: {// - - - -SALIR- - - -
+            case '6': {// - - - -SALIR- - - -
                 cout << "¡Hasta luego!" << endl;
                 break;
             }
@@ -155,7 +155,7 @@ int main()
                 break;
         }
         system("PAUSE");
-    } while (opcion != 6);
+    } while (opcion != '6');
 
     return 0;
 }
