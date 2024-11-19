@@ -13,10 +13,10 @@ istream& operator>>(istream &entrada, Producto &obj)
     cout<<"Ingrese el precio del producto: "<<endl;
     while(true){
         entrada>>obj.precio;
-        if(entrada.fail()){
+        if(entrada.fail()||obj.precio < 0){
             entrada.clear();
             entrada.ignore(1000,'\n');
-            cout<<"Debes de ingresar una cantidad númerica, intenta de nuevo.\n";
+            cout<<"Debes de ingresar una cantidad númerica positiva, intenta de nuevo.\n";
         }
         else{break;}
     }
@@ -26,10 +26,10 @@ istream& operator>>(istream &entrada, Producto &obj)
     cout<<"Ingrese el stock del producto: "<<endl;
     while(true){
         entrada>>obj.stock;
-        if(entrada.fail()){
+        if(entrada.fail()|| obj.stock < 0){
             entrada.clear();
             entrada.ignore(1000,'\n');
-            cout<<"Debes de ingresar una cantidad númerica, intenta de nuevo.\n";
+            cout<<"Debes de ingresar una cantidad númerica positiva, intenta de nuevo.\n";
         }
         else{break;}
     }
@@ -115,4 +115,14 @@ void Producto::mostrarInfo(void)
 string Producto::getNombre(void)
 {
     return nombre;
+}
+
+float Producto::getPrecio(void)
+{
+    return precio;
+}
+
+void Producto::setPrecio(float precio)
+{
+    this->precio=precio;
 }

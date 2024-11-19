@@ -20,8 +20,9 @@ void Inventario::agregarProducto(Producto* producto) {
 
 //------------------------------------> Mostrar Todos los Productos <------------------------------------
 void Inventario::mostrarProductos() {
-    for (auto producto : productos) {
-        producto->mostrarInfo();
+    for (size_t i=0 ; i<productos.size();i++) {
+        cout << i + 1 << ". ";
+        productos[i]->mostrarInfo();
         cout << "-----------------------------" << endl;
     }
 }
@@ -42,7 +43,7 @@ void Inventario::buscarProducto(string nombre)
 void Inventario::eliminarProducto(string nombre)
 {
     char confirmacion;
-    for (size_t i = 0; i < productos.size(); ++i) {
+    for (size_t i = 0; i < productos.size(); i++) {
         if (productos[i]->getNombre() == nombre) {
             cout<<"¿Esta seguro de que desea eliminar este producto? (S = Si, N = No)\n";
             cin>>confirmacion;
@@ -60,4 +61,21 @@ void Inventario::eliminarProducto(string nombre)
         }
     }
     cout << "Producto no encontrado." << endl;
+}
+
+//------------------------------------> Seleccionar un Producto <------------------------------------
+Producto* Inventario::seleccionarProducto()
+{
+    int opcion;
+    cout<<"Seleccione el número del producto que desee seleccionar\n";
+    while(true){
+        cin>>opcion;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore(1000,'\n');
+            cout<<"Debes de ingresar una opcion existente, intenta de nuevo.\n";
+        }
+        else{break;}
+    }
+    return productos[opcion - 1];
 }

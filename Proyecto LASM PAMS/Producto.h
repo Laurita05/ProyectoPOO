@@ -30,6 +30,8 @@ class Producto
         bool operator==(const Producto&);
 
         string getNombre(void);
+        float getPrecio(void);
+        void setPrecio(float);
         virtual ~Producto() {}
 };
 

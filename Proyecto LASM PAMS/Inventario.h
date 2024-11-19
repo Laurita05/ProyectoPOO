@@ -20,7 +20,7 @@ class Inventario
     void mostrarProductos(void);
     void buscarProducto(string);
     void eliminarProducto(string);
-
+    Producto* seleccionarProducto();
 };
 
 #endif // INVENTARIO_H

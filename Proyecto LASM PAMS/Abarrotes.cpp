@@ -10,10 +10,10 @@ istream& operator>>(istream &entrada, Abarrotes &obj)
     cout<<"Ingrese la cantidad por paquete: "<<endl;
     while(true){
         entrada>>obj.cantidadxPaquete;
-        if(entrada.fail()){
+        if(entrada.fail() || obj.cantidadxPaquete < 0){
             entrada.clear();
             entrada.ignore(1000,'\n');
-            cout<<"Debes de ingresar una cantidad númerica, intenta de nuevo.\n";
+            cout<<"Debes de ingresar una cantidad númerica positiva, intenta de nuevo.\n";
         }
         else{break;}
     }
@@ -30,7 +30,7 @@ Abarrotes::Abarrotes(string nombre,string fechaCaducidad,float precio,int stock,
 {
     this->categoria=categoria;
 }
-Abarrotes::Abarrotes(string nombre,string fechaCaducidad,float precio,int stock,string categoria,string cantidadxPaquete):Producto (nombre,fechaCaducidad,precio,stock)
+Abarrotes::Abarrotes(string nombre,string fechaCaducidad,float precio,int stock,string categoria,int cantidadxPaquete):Producto (nombre,fechaCaducidad,precio,stock)
 {
     this->categoria=categoria;
     this->cantidadxPaquete=cantidadxPaquete;
@@ -50,11 +50,11 @@ void Abarrotes::setCategoria(string categoria)
 {
     this->categoria=categoria;
 }
-string Abarrotes::getCantidadxPaquete(void)
+int Abarrotes::getCantidadxPaquete(void)
 {
     return cantidadxPaquete;
 }
-void Abarrotes::setCantidadxPaquete(string cantidadxPaquete)
+void Abarrotes::setCantidadxPaquete(int cantidadxPaquete)
 {
     this->cantidadxPaquete=cantidadxPaquete;
 }

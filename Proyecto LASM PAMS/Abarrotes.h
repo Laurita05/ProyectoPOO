@@ -8,19 +8,19 @@ class Abarrotes: public Producto
 {
     private:
         string categoria;
-        string cantidadxPaquete;
+        int cantidadxPaquete;
     public:
         Abarrotes();
         Abarrotes(string,string,float,int,string);
-        Abarrotes(string,string,float,int,string,string);
+        Abarrotes(string,string,float,int,string,int);
 
         void mostrarInfo(void)override;
 
         friend istream& operator>>(istream&, Abarrotes&);
         string getCategoria(void);
         void setCategoria(string);
-        string getCantidadxPaquete(void);
-        void setCantidadxPaquete(string);
+        int getCantidadxPaquete(void);
+        void setCantidadxPaquete(int);
 };
 
 #endif // ABARROTES_H

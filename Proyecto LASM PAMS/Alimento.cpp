@@ -10,10 +10,10 @@ istream& operator>>(istream &entrada, Alimento &obj)
     cout<<"Ingrese los gramos: "<<endl;
     while(true){
         entrada>>obj.gramos;
-        if(entrada.fail()){
+        if(entrada.fail()|| obj.gramos < 0){
             entrada.clear();
             entrada.ignore(1000,'\n');
-            cout<<"Debes de ingresar una cantidad númerica, intenta de nuevo.\n";
+            cout<<"Debes de ingresar una cantidad númerica positiva, intenta de nuevo.\n";
         }
         else{break;}
     }

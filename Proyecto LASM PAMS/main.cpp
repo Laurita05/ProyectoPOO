@@ -7,18 +7,20 @@
 #include <cstdlib>
 #include <locale>
 #include <wchar.h>
+#include <cmath>
 
 using namespace std;
 
 int main()
 {
+    string nombre,nombre2;
     setlocale(LC_ALL, "");//Esto es para que se pongan los acentos en todo :D
     Inventario inventario;//Declaración del objeto inventario, de la clase Inventario valga la redundancia
-    char opcion, subOpcion;//Opciones para el switch del menú y del sub-menú
+    char opcion, subOpcion, sobrecargaOpc;//Opciones para el switch del menú y de sub-menús
 
-    Producto p1("Manzana","27/11/2024",12.75, 100);// prueba
-    Producto p2("Pera","27/11/2024",10.5, 88);// prueba
-    Producto p3("Banano","27/11/2024",13, 100);// prueba
+    Producto *p1;// prueba
+    Producto *p2;// prueba
+    Producto *p3;// prueba
 
     Producto* manzana = new Producto("Manzana", "27/11/2024", 12.75, 100);
     Producto* pera = new Producto("Pera", "27/11/2024", 10.5, 88);
@@ -96,7 +98,6 @@ int main()
             }// FIN DEL CASE 1
 
             case '2': {// - - - -BUSCAR UN PRODUCTO- - - -
-                string nombre;
                 if (inventario.inventarioVacio()) {break;}
                 cout << "Ingrese el nombre del producto a buscar: ";
                 cin.ignore();
@@ -105,7 +106,6 @@ int main()
                 break;
             }
             case '3': {// - - - -ELIMINAR PRODUCTOS- - - -
-                string nombre;
                 if (inventario.inventarioVacio()) {break;}
                 cout << "Ingrese el nombre del producto a eliminar: ";
                 cin.ignore();
@@ -119,7 +119,61 @@ int main()
                 break;
             }
             case '5': {// - - - -Sobrecarguitas- - - -
-                cout << "Producto 1: " << p1 << endl;
+                system("CLS");
+                cout<<"¿Qué desea hacer?\n";
+                cout<<"1. Checkout\n";
+                cout<<"2. Poner oferta\n";
+                cout<<"3. Comprobar si es igual el producto\n";
+                cout<<"Elige una opción: ";
+                cin>>sobrecargaOpc;
+                switch(sobrecargaOpc){
+                    case '1': { // - - - -CHECKOUT (sobre carga de... - - - -
+                        break;
+                    }
+                    case '2': { // - - - -PONER OFERTA (sobrecarga de...- - - -
+                        if (inventario.inventarioVacio()) {break;}
+                        float cant, resultado;
+                        inventario.mostrarProductos();
+                        cout << "\nSelecciona el producto que tendrá oferta: \n";
+                        p1 = inventario.seleccionarProducto();
+                        cout<<"¿De cuánto es el descuento?\n";
+                        cin >> cant ;
+                        cout<<"¡¡OFERTA!!\nEl producto antes del descuento:\n"<<*p1<<endl;
+                        if(cant==50){ *p1 = *p1 / 2;}
+                        else{
+                        resultado = p1->getPrecio() * (cant*0.01);
+                        p1->setPrecio(p1->getPrecio() - resultado);
+                        }
+                        cout<<"El producto con descuento:\n"<< *p1 <<endl;
+                        break;
+                    }
+                    case '3': { // - - - -¿SON IGUALES? (sobrecarga de == )- - - -
+                        if (inventario.inventarioVacio()) {break;}
+                        inventario.mostrarProductos();
+                        cout << "\nPrimer producto\n";
+                        p1 = inventario.seleccionarProducto();
+                        cout << "\nSegundo producto\n";
+                        p2 = inventario.seleccionarProducto();
+                        bool sonIguales = (*p1 == *p2);
+                        cout << "\nResultado de comparar p1 y p2 (==): " << (sonIguales ? "Son iguales" : "Son diferentes") << endl;
+                        break;
+                    }
+                    default:
+                        cout << "Opción inválida. Por favor, elige otra opción." << endl;
+                        break;
+                }
+                system("PAUSE");
+                break;
+            }
+            case '6': {// - - - -SALIR- - - -
+                cout << "¡Hasta luego ! :D " << endl;
+                break;
+            }
+            default:
+                cout << "Opción inválida. Por favor, elige otra opción." << endl;
+                break;
+        }
+        /*cout << "Producto 1: " << p1 << endl;
                 cout << "Producto 2: " << p2 << endl;
                 cout << "Producto 3: " << p3 << endl;
                 Producto suma = p1 + p2; // <--------sobrecarga operador +
@@ -137,23 +191,7 @@ int main()
                 p3 = p1;// <--------sobrecarga operador =
                 cout << "\nDespués de la asignación (p3 = p1):\n";
                 cout << "Producto 1: " << p1 << endl;
-                cout << "Producto 3: " << p3 << endl;
-
-                bool sonIguales = (p1 == p2); // <--------sobrecarga operador ==
-                cout << "\nResultado de comparar p1 y p2 (==): " << (sonIguales ? "Son iguales" : "Son diferentes") << endl; //aquí va a decir que nop
-                sonIguales = (p1 == p3);
-                cout << "\nResultado de comparar p1 y p3 (==): " << (sonIguales ? "Son iguales" : "Son diferentes\n") << endl; //aquí va a decir que sipirili
-
-                break;
-            }
-            case '6': {// - - - -SALIR- - - -
-                cout << "¡Hasta luego!" << endl;
-                break;
-            }
-            default:
-                cout << "Opción inválida. Por favor, elige otra opción." << endl;
-                break;
-        }
+                cout << "Producto 3: " << p3 << endl;*/
         system("PAUSE");
     } while (opcion != '6');
 
