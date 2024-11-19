@@ -30,6 +30,7 @@ class Producto
         bool operator==(const Producto&);
 
         string getNombre(void);
+        virtual ~Producto() {}
 };
 
 #endif // PRODUCTO_H
