@@ -8,7 +8,16 @@ istream& operator>>(istream &entrada, Alimento &obj)
     entrada.ignore();
     getline(entrada, obj.tipo);
     cout<<"Ingrese los gramos: "<<endl;
-    entrada>>obj.gramos;
+    while(true){
+        entrada>>obj.gramos;
+        if(entrada.fail()){
+            entrada.clear();
+            entrada.ignore(1000,'\n');
+            cout<<"Debes de ingresar una cantidad númerica, intenta de nuevo.\n";
+        }
+        else{break;}
+    }
+
     return entrada;
 }
 //-----------------------------------------------------

@@ -11,12 +11,28 @@ istream& operator>>(istream &entrada, Producto &obj)
     entrada.ignore();
     getline(entrada, obj.nombre);
     cout<<"Ingrese el precio del producto: "<<endl;
-    entrada>>obj.precio;
+    while(true){
+        entrada>>obj.precio;
+        if(entrada.fail()){
+            entrada.clear();
+            entrada.ignore(1000,'\n');
+            cout<<"Debes de ingresar una cantidad númerica, intenta de nuevo.\n";
+        }
+        else{break;}
+    }
     cout<<"Ingrese la fecha de caducidad del producto (DD/MM/AAAA): "<<endl;
     entrada.ignore();
     getline(entrada, obj.fechaCaducidad);
     cout<<"Ingrese el stock del producto: "<<endl;
-    entrada>>obj.stock;
+    while(true){
+        entrada>>obj.stock;
+        if(entrada.fail()){
+            entrada.clear();
+            entrada.ignore(1000,'\n');
+            cout<<"Debes de ingresar una cantidad númerica, intenta de nuevo.\n";
+        }
+        else{break;}
+    }
     return entrada;
 }
 Producto Producto::operator+(const Producto &obj)

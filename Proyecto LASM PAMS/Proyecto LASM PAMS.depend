@@ -2,7 +2,7 @@
 1731979577 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\abarrotes.cpp
 	"Abarrotes.h"
 
-1731810692 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\abarrotes.h
+1731983699 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\abarrotes.h
 	"Producto.h"
 	<iostream>
 
@@ -12,11 +12,11 @@
 1731979577 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\bebida.cpp
 	"Bebida.h"
 
-1731814956 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\bebida.h
+1731983699 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\bebida.h
 	"Producto.h"
 	<iostream>
 
-1731980140 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\main.cpp
+1731983021 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\main.cpp
 	"Inventario.h"
 	"Producto.h"
 	"Abarrotes.h"
@@ -27,11 +27,11 @@
 	<locale>
 	<wchar.h>
 
-1731814913 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\alimento.h
+1731983699 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\alimento.h
 	"Producto.h"
 	<iostream>
 
-1731980214 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\producto.cpp
+1731984229 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\producto.cpp
 	"Producto.h"
 
 1731979577 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\alimento.cpp
@@ -40,7 +40,7 @@
 1731979536 source:c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\inventario.cpp
 	"Inventario.h"
 
-1731964196 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\inventario.h
+1731983699 c:\users\chica\onedrive\documents\github\proyectopoo\proyecto lasm pams\inventario.h
 	"Producto.h"
 	"Abarrotes.h"
 	"Alimento.h"

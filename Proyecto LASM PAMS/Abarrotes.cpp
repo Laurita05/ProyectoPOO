@@ -8,7 +8,16 @@ istream& operator>>(istream &entrada, Abarrotes &obj)
     entrada.ignore();
     getline(entrada, obj.categoria);
     cout<<"Ingrese la cantidad por paquete: "<<endl;
-    entrada>>obj.cantidadxPaquete;
+    while(true){
+        entrada>>obj.cantidadxPaquete;
+        if(entrada.fail()){
+            entrada.clear();
+            entrada.ignore(1000,'\n');
+            cout<<"Debes de ingresar una cantidad númerica, intenta de nuevo.\n";
+        }
+        else{break;}
+    }
+
     return entrada;
 }
 //-----------------------------------------------------

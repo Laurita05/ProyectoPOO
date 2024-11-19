@@ -20,7 +20,6 @@ class Bebida: public Producto
 
         void mostrarInfo(void)override;
 
-        friend ostream& operator<<(ostream&, const Bebida&);
         friend istream& operator>>(istream&, Bebida&);
         string getSabor(void);
         void setSabor(string);

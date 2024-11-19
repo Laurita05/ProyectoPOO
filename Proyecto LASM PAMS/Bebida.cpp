@@ -8,7 +8,16 @@ istream& operator>>(istream &entrada, Bebida &obj)
     entrada.ignore();
     getline(entrada, obj.sabor);
     cout<<"Ingrese los mililitros: "<<endl;
-    entrada>>obj.mililitros;
+    while(true){
+        entrada>>obj.mililitros;
+        if(entrada.fail()){
+            entrada.clear();
+            entrada.ignore(1000,'\n');
+            cout<<"Debes de ingresar una cantidad númerica, intenta de nuevo.\n";
+        }
+        else{break;}
+    }
+
     return entrada;
 }
 //-----------------------------------------------------
