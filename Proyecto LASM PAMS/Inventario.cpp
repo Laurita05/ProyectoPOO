@@ -67,10 +67,11 @@ void Inventario::eliminarProducto(string nombre)
 Producto* Inventario::seleccionarProducto()
 {
     int opcion;
-    cout<<"Seleccione el número del producto que desee seleccionar\n";
+    size_t maximo = productos.size();
+    cout<<"Seleccione el número del producto que desee seleccionar (de 1 a "<< maximo <<")\n";
     while(true){
         cin>>opcion;
-        if(cin.fail()){
+        if(cin.fail()|| opcion>maximo){
             cin.clear();
             cin.ignore(1000,'\n');
             cout<<"Debes de ingresar una opcion existente, intenta de nuevo.\n";

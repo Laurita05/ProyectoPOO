@@ -49,6 +49,7 @@ int main()
 
         switch (opcion) {
             case '1': { // - - - -INGRESAR PRODUCTOS- - - -
+                do{
                     system("CLS");
                     cout<<"- - - - - - - -Menú de Ingreso- - - - - - - -"<<endl;
                     cout<<"Que tipo de producto desea ingresar?"<<endl;
@@ -94,6 +95,7 @@ int main()
                             }
                         }
                         system("PAUSE");
+                    }while(subOpcion!=4);
                 break;
             }// FIN DEL CASE 1
 
@@ -119,18 +121,17 @@ int main()
                 break;
             }
             case '5': {// - - - -Sobrecarguitas- - - -
+                do{
                 system("CLS");
                 cout<<"¿Qué desea hacer?\n";
-                cout<<"1. Checkout\n";
-                cout<<"2. Poner oferta\n";
-                cout<<"3. Comprobar si es igual el producto\n";
+                cout<<"1. Checkout\n2. Poner oferta\n3. Comprobar si es igual el producto\n4. Extras\n5. Volver al menú principal\n";
                 cout<<"Elige una opción: ";
                 cin>>sobrecargaOpc;
                 switch(sobrecargaOpc){
                     case '1': { // - - - -CHECKOUT (sobre carga de... - - - -
                         break;
                     }
-                    case '2': { // - - - -PONER OFERTA (sobrecarga de...- - - -
+                    case '2': { // - - - -PONER OFERTA (sobrecarga de /)- - - -
                         if (inventario.inventarioVacio()) {break;}
                         float cant, resultado;
                         inventario.mostrarProductos();
@@ -155,16 +156,23 @@ int main()
                         cout << "\nSegundo producto\n";
                         p2 = inventario.seleccionarProducto();
                         bool sonIguales = (*p1 == *p2);
-                        cout << "\nResultado de comparar p1 y p2 (==): " << (sonIguales ? "Son iguales" : "Son diferentes") << endl;
+                        cout << "\nResultado de comparar "<<p1->getNombre()<<" y "<<p2->getNombre()<<" (==): " << (sonIguales ? "Son iguales" : "Son diferentes") << endl;
                         break;
                     }
+                    case  '4':
+                        break;
+                    case '5':
+                        cout<<"Saliendo al menú principal...\n";
+                        break;
                     default:
                         cout << "Opción inválida. Por favor, elige otra opción." << endl;
                         break;
+
                 }
-                system("PAUSE");
+                    system("PAUSE");
+                }while(sobrecargaOpc!='5');
                 break;
-            }
+            }//FIN DEL CASE 5
             case '6': {// - - - -SALIR- - - -
                 cout << "¡Hasta luego ! :D " << endl;
                 break;
@@ -184,9 +192,6 @@ int main()
 
                 Producto multiplicacion = p1 * 3; // <--------sobrecarga operador *
                 cout << "\nResultado de p1 * 3:" << multiplicacion << endl;
-
-                Producto division = p2 / 2; // <--------sobrecarga operador /
-                cout << "\nResultado de p2 / 2:" << division << endl;
 
                 p3 = p1;// <--------sobrecarga operador =
                 cout << "\nDespués de la asignación (p3 = p1):\n";
