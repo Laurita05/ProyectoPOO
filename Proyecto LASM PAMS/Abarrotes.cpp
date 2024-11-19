@@ -26,10 +26,6 @@ Abarrotes::Abarrotes()
     //ctor
 }
 
-Abarrotes::Abarrotes(string nombre):Producto (nombre){}
-Abarrotes::Abarrotes(string nombre, string fechaCaducidad):Producto (nombre,fechaCaducidad){}
-Abarrotes::Abarrotes(string nombre,string fechaCaducidad,float precio):Producto (nombre,fechaCaducidad,precio){}
-Abarrotes::Abarrotes(string nombre,string fechaCaducidad,float precio,int stock):Producto (nombre,fechaCaducidad,precio,stock){}
 Abarrotes::Abarrotes(string nombre,string fechaCaducidad,float precio,int stock,string categoria):Producto (nombre,fechaCaducidad,precio,stock)
 {
     this->categoria=categoria;

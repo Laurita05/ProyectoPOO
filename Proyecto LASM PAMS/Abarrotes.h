@@ -11,10 +11,6 @@ class Abarrotes: public Producto
         string cantidadxPaquete;
     public:
         Abarrotes();
-        Abarrotes(string);
-        Abarrotes(string,string);
-        Abarrotes(string,string,float);
-        Abarrotes(string,string,float,int);
         Abarrotes(string,string,float,int,string);
         Abarrotes(string,string,float,int,string,string);
 

@@ -26,10 +26,6 @@ Bebida::Bebida()
     //ctor
 }
 
-Bebida::Bebida(string nombre):Producto (nombre){}
-Bebida::Bebida(string nombre, string fechaCaducidad):Producto (nombre,fechaCaducidad){}
-Bebida::Bebida(string nombre,string fechaCaducidad,float precio):Producto (nombre,fechaCaducidad,precio){}
-Bebida::Bebida(string nombre,string fechaCaducidad,float precio,int stock):Producto (nombre,fechaCaducidad,precio,stock){}
 Bebida::Bebida(string nombre,string fechaCaducidad,float precio,int stock,string sabor):Producto (nombre,fechaCaducidad,precio,stock)
 {
     this->sabor=sabor;

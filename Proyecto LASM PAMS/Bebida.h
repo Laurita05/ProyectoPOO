@@ -11,10 +11,6 @@ class Bebida: public Producto
         int mililitros;
     public:
         Bebida();
-        Bebida(string);
-        Bebida(string,string);
-        Bebida(string,string,float);
-        Bebida(string,string,float,int);
         Bebida(string,string,float,int,string);
         Bebida(string,string,float,int,string,int);
 

@@ -11,10 +11,6 @@ class Alimento: public Producto
         int gramos;
     public:
         Alimento();
-        Alimento(string);
-        Alimento(string,string);
-        Alimento(string,string,float);
-        Alimento(string,string,float,int);
         Alimento(string,string,float,int,string);
         Alimento(string,string,float,int,string,int);
 
