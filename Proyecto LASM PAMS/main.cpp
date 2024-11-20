@@ -95,7 +95,7 @@ int main()
                             }
                         }
                         system("PAUSE");
-                    }while(subOpcion!=4);
+                    }while(subOpcion!='4');
                 break;
             }// FIN DEL CASE 1
 
@@ -124,7 +124,7 @@ int main()
                 do{
                 system("CLS");
                 cout<<"¿Qué desea hacer?\n";
-                cout<<"1. Checkout\n2. Poner oferta\n3. Comprobar si es igual el producto\n4. Extras\n5. Volver al menú principal\n";
+                cout<<"1. Checkout\n2. Poner oferta\n3. Comprobar si es igual el producto\n4. Volver al menú principal\n";
                 cout<<"Elige una opción: ";
                 cin>>sobrecargaOpc;
                 switch(sobrecargaOpc){
@@ -159,9 +159,7 @@ int main()
                         cout << "\nResultado de comparar "<<p1->getNombre()<<" y "<<p2->getNombre()<<" (==): " << (sonIguales ? "Son iguales" : "Son diferentes") << endl;
                         break;
                     }
-                    case  '4':
-                        break;
-                    case '5':
+                    case '4':
                         cout<<"Saliendo al menú principal...\n";
                         break;
                     default:
@@ -170,7 +168,7 @@ int main()
 
                 }
                     system("PAUSE");
-                }while(sobrecargaOpc!='5');
+                }while(sobrecargaOpc!='4');
                 break;
             }//FIN DEL CASE 5
             case '6': {// - - - -SALIR- - - -
@@ -181,22 +179,6 @@ int main()
                 cout << "Opción inválida. Por favor, elige otra opción." << endl;
                 break;
         }
-        /*cout << "Producto 1: " << p1 << endl;
-                cout << "Producto 2: " << p2 << endl;
-                cout << "Producto 3: " << p3 << endl;
-                Producto suma = p1 + p2; // <--------sobrecarga operador +
-                cout << "\nResultado de p1 + p2:" << suma << endl;
-
-                Producto resta = p1 - p2; // <--------sobrecarga operador -
-                cout << "\nResultado de p1 - p2:" << resta << endl;
-
-                Producto multiplicacion = p1 * 3; // <--------sobrecarga operador *
-                cout << "\nResultado de p1 * 3:" << multiplicacion << endl;
-
-                p3 = p1;// <--------sobrecarga operador =
-                cout << "\nDespués de la asignación (p3 = p1):\n";
-                cout << "Producto 1: " << p1 << endl;
-                cout << "Producto 3: " << p3 << endl;*/
         system("PAUSE");
     } while (opcion != '6');
 
