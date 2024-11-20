@@ -151,20 +151,20 @@ int main()
                             cin>>cuanto;
                             p1->setStock(p1->getStock()-cuanto);
                             *pAux=(*p1)*(cuanto);
-                            if(cant>=2){
-                                p2=inventario.seleccionarProducto();
-                                cout<<"¿Cuántas unidades del producto llevará?: ";
-                                cin>>cuanto;
-                                p2->setStock(p2->getStock()-cuanto);
-                                *pAux=(*pAux)+((*p2)*(cuanto));
-                                if(cant>=3){
-                                    p3=inventario.seleccionarProducto();
-                                    cout<<"¿Cuántas unidades del producto llevará?: ";
-                                    cin>>cuanto;
-                                    p3->setStock(p3->getStock()-cuanto);
-                                    *pAux=(*pAux)+((*p3)*(cuanto));
-                                }
-                            }
+                        }
+                        if(cant>=2){
+                            p2=inventario.seleccionarProducto();
+                            cout<<"¿Cuántas unidades del producto llevará?: ";
+                            cin>>cuanto;
+                            p2->setStock(p2->getStock()-cuanto);
+                            *pAux=(*pAux)+((*p2)*(cuanto));
+                        }
+                        if(cant>=3){
+                            p3=inventario.seleccionarProducto();
+                            cout<<"¿Cuántas unidades del producto llevará?: ";
+                            cin>>cuanto;
+                            p3->setStock(p3->getStock()-cuanto);
+                            *pAux=(*pAux)+((*p3)*(cuanto));
                         }
                         cout<<"El resultado de su compra es: \n"<<*pAux<<endl;
                         delete pAux;
@@ -184,7 +184,7 @@ int main()
                         p1->setPrecio(p1->getPrecio() - resultado);
                         }
                         cout<<"El producto con descuento:\n"<< *p1 <<endl;
-                        if(cant>100){cout<<"            Porfavor llevese el producto, le pagaremos\n";}
+                        if(cant>100){cout<<" Porfavor llevese el producto, le pagaremos\n";}
                         break;
                     }
                     case '3': { // - - - -¿SON IGUALES? (sobrecarga de == )- - - -
