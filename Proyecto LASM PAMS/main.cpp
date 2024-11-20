@@ -157,12 +157,13 @@ int main()
                                 }
                                 else{break;}
                             }
+                            p1->setStock(p1->getStock()-cuanto);
+                            *pAux=(*p1)*(cuanto);
+
                             if(p1->getStock()-cuanto==0){
                                 nombre=p1->getNombre();
                                 inventario.seAcaboElProducto(nombre);
                             }
-                            p1->setStock(p1->getStock()-cuanto);
-                            *pAux=(*p1)*(cuanto);
                         }
                         if(cant>=2){
                             p2=inventario.seleccionarProducto();
@@ -176,12 +177,12 @@ int main()
                                 }
                                 else{break;}
                             }
+                            p2->setStock(p2->getStock()-cuanto);
+                            *pAux=(*pAux)+((*p2)*(cuanto));
                             if(p2->getStock()-cuanto==0){
                                 nombre=p2->getNombre();
                                 inventario.seAcaboElProducto(nombre);
                             }
-                            p2->setStock(p2->getStock()-cuanto);
-                            *pAux=(*pAux)+((*p2)*(cuanto));
                         }
                         if(cant>=3){
                             p3=inventario.seleccionarProducto();
@@ -195,14 +196,16 @@ int main()
                                 }
                                 else{break;}
                             }
+                            p3->setStock(p3->getStock()-cuanto);
+                            *pAux=(*pAux)+((*p3)*(cuanto));
+
                             if(p3->getStock()-cuanto==0){
                                 nombre=p3->getNombre();
                                 inventario.seAcaboElProducto(nombre);
                             }
-                            p3->setStock(p3->getStock()-cuanto);
-                            *pAux=(*pAux)+((*p3)*(cuanto));
                         }
                         cout<<"El resultado de su compra es: \n"<<*pAux<<endl;
+
                         delete pAux;
                         break;
                     }
