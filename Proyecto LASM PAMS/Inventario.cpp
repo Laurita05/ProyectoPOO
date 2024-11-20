@@ -63,6 +63,7 @@ void Inventario::eliminarProducto(string nombre)
     cout << "Producto no encontrado." << endl;
 }
 
+//------------------------------------> Se Acabó el Producto <------------------------------------
 void Inventario::seAcaboElProducto(string nombre)
 {
     for (size_t i = 0; i < productos.size(); i++) {
