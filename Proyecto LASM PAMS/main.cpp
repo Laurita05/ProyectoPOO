@@ -14,6 +14,7 @@ using namespace std;
 int main()
 {
     string nombre,nombre2;
+    float cant, resultado;
     setlocale(LC_ALL, "");//Esto es para que se pongan los acentos en todo :D
     Inventario inventario;//Declaración del objeto inventario, de la clase Inventario valga la redundancia
     char opcion, subOpcion, sobrecargaOpc;//Opciones para el switch del menú y de sub-menús
@@ -129,11 +130,23 @@ int main()
                 cin>>sobrecargaOpc;
                 switch(sobrecargaOpc){
                     case '1': { // - - - -CHECKOUT (sobre carga de... - - - -
+                        if (inventario.inventarioVacio()){break;}
+                        inventario.mostrarProductos();
+                        cout<<"Ingrese de 1 a 3 productos: \n";
+                        cin>>cant;
+                        Producto *pAux;
+                        if(cant==1){p1=inventario.seleccionarProducto();}
+                        else if(cant==2){p1=inventario.seleccionarProducto();
+                        p2=inventario.seleccionarProducto();}
+                        else if(cant==3){p1=inventario.seleccionarProducto();
+                        p2=inventario.seleccionarProducto();
+                        p3=inventario.seleccionarProducto();}
+                        *pAux=*p1+*p2+*p3;
+                        cout<<"El resultado de su compra es: \n"<<*pAux<<endl;
                         break;
                     }
                     case '2': { // - - - -PONER OFERTA (sobrecarga de /)- - - -
                         if (inventario.inventarioVacio()) {break;}
-                        float cant, resultado;
                         inventario.mostrarProductos();
                         cout << "\nSelecciona el producto que tendrá oferta: \n";
                         p1 = inventario.seleccionarProducto();
@@ -146,6 +159,7 @@ int main()
                         p1->setPrecio(p1->getPrecio() - resultado);
                         }
                         cout<<"El producto con descuento:\n"<< *p1 <<endl;
+                        if(cant>100){cout<<"            Porfavor llevese el producto, le pagaremos\n";}
                         break;
                     }
                     case '3': { // - - - -¿SON IGUALES? (sobrecarga de == )- - - -
