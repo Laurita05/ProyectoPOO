@@ -63,6 +63,17 @@ void Inventario::eliminarProducto(string nombre)
     cout << "Producto no encontrado." << endl;
 }
 
+void Inventario::seAcaboElProducto(string nombre)
+{
+    for (size_t i = 0; i < productos.size(); i++) {
+        if (productos[i]->getNombre() == nombre) {
+            delete productos[i];
+            productos.erase(productos.begin() + i);
+            cout << "Con esta compra se termina el stock de "<<nombre<<"\n"<< endl;
+            return;
+        }
+    }
+}
 //------------------------------------> Seleccionar un Producto <------------------------------------
 Producto* Inventario::seleccionarProducto()
 {

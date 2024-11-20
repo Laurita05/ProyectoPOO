@@ -13,7 +13,6 @@ using namespace std;
 
 int main()
 {
-
     setlocale(LC_ALL, "");//Esto es para que se pongan los acentos en todo :D
     Inventario inventario;//Declaración del objeto inventario, de la clase Inventario valga la redundancia
     char opcion, subOpcion, sobrecargaOpc;//Opciones para el switch del menú y de sub-menús
@@ -124,6 +123,7 @@ int main()
             }
             case '5': {// - - - -Sobrecarguitas- - - -
                 do{
+                if (inventario.inventarioVacio()){break;}
                 system("CLS");
                 cout<<"¿Qué desea hacer?\n";
                 cout<<"1. Checkout\n2. Poner oferta\n3. Comprobar si es igual el producto\n4. Volver al menú principal\n";
@@ -148,21 +148,57 @@ int main()
                         if(cant>=1){
                             p1=inventario.seleccionarProducto();
                             cout<<"¿Cuántas unidades del producto llevará?: ";
-                            cin>>cuanto;
+                            while(true){
+                                cin>>cuanto;
+                                if(cin.fail()||cuanto<0||p1->getStock()<cuanto){
+                                    cin.clear();
+                                    cin.ignore(100,'\n');
+                                    cout<<"Ingrese una cantidad valida (si su cantidad es mayor a 0, verifique que no sea mayor al stock)\n";
+                                }
+                                else{break;}
+                            }
+                            if(p1->getStock()-cuanto==0){
+                                nombre=p1->getNombre();
+                                inventario.seAcaboElProducto(nombre);
+                            }
                             p1->setStock(p1->getStock()-cuanto);
                             *pAux=(*p1)*(cuanto);
                         }
                         if(cant>=2){
                             p2=inventario.seleccionarProducto();
                             cout<<"¿Cuántas unidades del producto llevará?: ";
-                            cin>>cuanto;
+                            while(true){
+                                cin>>cuanto;
+                                if(cin.fail()||cuanto<0||p2->getStock()<cuanto){
+                                    cin.clear();
+                                    cin.ignore(100,'\n');
+                                    cout<<"Ingrese una cantidad valida (si su cantidad es mayor a 0, verifique que no sea mayor al stock)\n";
+                                }
+                                else{break;}
+                            }
+                            if(p2->getStock()-cuanto==0){
+                                nombre=p2->getNombre();
+                                inventario.seAcaboElProducto(nombre);
+                            }
                             p2->setStock(p2->getStock()-cuanto);
                             *pAux=(*pAux)+((*p2)*(cuanto));
                         }
                         if(cant>=3){
                             p3=inventario.seleccionarProducto();
                             cout<<"¿Cuántas unidades del producto llevará?: ";
-                            cin>>cuanto;
+                            while(true){
+                                cin>>cuanto;
+                                if(cin.fail()||cuanto<0||p3->getStock()<cuanto){
+                                    cin.clear();
+                                    cin.ignore(100,'\n');
+                                    cout<<"Ingrese una cantidad valida (si su cantidad es mayor a 0, verifique que no sea mayor al stock)\n";
+                                }
+                                else{break;}
+                            }
+                            if(p3->getStock()-cuanto==0){
+                                nombre=p3->getNombre();
+                                inventario.seAcaboElProducto(nombre);
+                            }
                             p3->setStock(p3->getStock()-cuanto);
                             *pAux=(*pAux)+((*p3)*(cuanto));
                         }
