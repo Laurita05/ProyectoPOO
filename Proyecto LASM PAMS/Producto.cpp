@@ -126,3 +126,10 @@ void Producto::setPrecio(float precio)
 {
     this->precio=precio;
 }
+int Producto::getStock(void){
+    return stock;
+}
+void Producto::setStock(int stock)
+{
+    this->stock=stock;
+}

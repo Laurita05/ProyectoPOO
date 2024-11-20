@@ -71,7 +71,7 @@ Producto* Inventario::seleccionarProducto()
     cout<<"Seleccione el número del producto que desee seleccionar (de 1 a "<< maximo <<")\n";
     while(true){
         cin>>opcion;
-        if(cin.fail()|| opcion>maximo){
+        if(cin.fail()|| opcion<=0 || opcion>maximo){
             cin.clear();
             cin.ignore(1000,'\n');
             cout<<"Debes de ingresar una opcion existente, intenta de nuevo.\n";

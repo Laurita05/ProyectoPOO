@@ -32,6 +32,8 @@ class Producto
         string getNombre(void);
         float getPrecio(void);
         void setPrecio(float);
+        int getStock(void);
+        void setStock(int);
         virtual ~Producto() {}
 };
 

@@ -13,15 +13,10 @@ using namespace std;
 
 int main()
 {
-    string nombre,nombre2;
-    float cant, resultado;
+
     setlocale(LC_ALL, "");//Esto es para que se pongan los acentos en todo :D
     Inventario inventario;//Declaración del objeto inventario, de la clase Inventario valga la redundancia
     char opcion, subOpcion, sobrecargaOpc;//Opciones para el switch del menú y de sub-menús
-
-    Producto *p1;// prueba
-    Producto *p2;// prueba
-    Producto *p3;// prueba
 
     Producto* manzana = new Producto("Manzana", "27/11/2024", 12.75, 100);
     Producto* pera = new Producto("Pera", "27/11/2024", 10.5, 88);
@@ -29,6 +24,12 @@ int main()
     inventario.agregarProducto(manzana);
     inventario.agregarProducto(pera);
     inventario.agregarProducto(banano);
+
+    Producto *p1 = nullptr;// prueba
+    Producto *p2 = nullptr;// prueba
+    Producto *p3 = nullptr;// prueba
+    string nombre,nombre2;
+    float cant, resultado;
 
     do {
         system("CLS");
@@ -129,20 +130,44 @@ int main()
                 cout<<"Elige una opción: ";
                 cin>>sobrecargaOpc;
                 switch(sobrecargaOpc){
-                    case '1': { // - - - -CHECKOUT (sobre carga de... - - - -
+                    case '1': { // - - - -CHECKOUT (sobre carga de +, * y =) - - - -
                         if (inventario.inventarioVacio()){break;}
+                        int cuanto;
+                        Producto *pAux=new Producto;
                         inventario.mostrarProductos();
                         cout<<"Ingrese de 1 a 3 productos: \n";
+                        while(true){
                         cin>>cant;
-                        Producto *pAux;
-                        if(cant==1){p1=inventario.seleccionarProducto();}
-                        else if(cant==2){p1=inventario.seleccionarProducto();
-                        p2=inventario.seleccionarProducto();}
-                        else if(cant==3){p1=inventario.seleccionarProducto();
-                        p2=inventario.seleccionarProducto();
-                        p3=inventario.seleccionarProducto();}
-                        *pAux=*p1+*p2+*p3;
+                            if (cin.fail()||cant < 1 || cant > 3) {
+                                cin.clear();
+                                cin.ignore(100,'\n');
+                                cout << "Debes ingresar un número entre 1 y 3.\n";}
+                            else{break;}
+                        }
+
+                        if(cant>=1){
+                            p1=inventario.seleccionarProducto();
+                            cout<<"¿Cuántas unidades del producto llevará?: ";
+                            cin>>cuanto;
+                            p1->setStock(p1->getStock()-cuanto);
+                            *pAux=(*p1)*(cuanto);
+                            if(cant>=2){
+                                p2=inventario.seleccionarProducto();
+                                cout<<"¿Cuántas unidades del producto llevará?: ";
+                                cin>>cuanto;
+                                p2->setStock(p2->getStock()-cuanto);
+                                *pAux=(*pAux)+((*p2)*(cuanto));
+                                if(cant>=3){
+                                    p3=inventario.seleccionarProducto();
+                                    cout<<"¿Cuántas unidades del producto llevará?: ";
+                                    cin>>cuanto;
+                                    p3->setStock(p3->getStock()-cuanto);
+                                    *pAux=(*pAux)+((*p3)*(cuanto));
+                                }
+                            }
+                        }
                         cout<<"El resultado de su compra es: \n"<<*pAux<<endl;
+                        delete pAux;
                         break;
                     }
                     case '2': { // - - - -PONER OFERTA (sobrecarga de /)- - - -
