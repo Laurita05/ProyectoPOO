@@ -157,6 +157,10 @@ int main()
                                 }
                                 else{break;}
                             }
+                            if(p1->getStock()-cuanto==0){
+                                nombre=p1->getNombre();
+                                inventario.seAcaboElProducto(nombre);
+                            }
                             p1->setStock(p1->getStock()-cuanto);
                             *pAux=(*p1)*(cuanto);
                         }
@@ -171,6 +175,10 @@ int main()
                                     cout<<"Ingrese una cantidad valida (si su cantidad es mayor a 0, verifique que no sea mayor al stock)\n";
                                 }
                                 else{break;}
+                            }
+                            if(p2->getStock()-cuanto==0){
+                                nombre=p2->getNombre();
+                                inventario.seAcaboElProducto(nombre);
                             }
                             p2->setStock(p2->getStock()-cuanto);
                             *pAux=(*pAux)+((*p2)*(cuanto));
@@ -187,29 +195,14 @@ int main()
                                 }
                                 else{break;}
                             }
-                            p3->setStock(p3->getStock()-cuanto);
-                            *pAux=(*pAux)+((*p3)*(cuanto));
-
-
-
-                        }
-                        cout<<"El resultado de su compra es: \n"<<*pAux<<endl;
-
-                        if(p1->getStock()==0){
-                            nombre=p1->getNombre();
-                            inventario.seAcaboElProducto(nombre);
-                        }
-                        else{p1=nullptr;}
-                        if(p2->getStock()==0){
-                                nombre=p2->getNombre();
-                                inventario.seAcaboElProducto(nombre);
-                        }
-                        else{p2=nullptr;}
-                        if(p3->getStock()==0){
+                            if(p3->getStock()-cuanto==0){
                                 nombre=p3->getNombre();
                                 inventario.seAcaboElProducto(nombre);
+                            }
+                            p3->setStock(p3->getStock()-cuanto);
+                            *pAux=(*pAux)+((*p3)*(cuanto));
                         }
-                        else{p3=nullptr;}
+                        cout<<"El resultado de su compra es: \n"<<*pAux<<endl;
 
                         delete pAux;
                         break;
