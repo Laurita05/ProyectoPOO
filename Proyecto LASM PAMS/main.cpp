@@ -159,11 +159,6 @@ int main()
                             }
                             p1->setStock(p1->getStock()-cuanto);
                             *pAux=(*p1)*(cuanto);
-
-                            if(p1->getStock()-cuanto==0){
-                                nombre=p1->getNombre();
-                                inventario.seAcaboElProducto(nombre);
-                            }
                         }
                         if(cant>=2){
                             p2=inventario.seleccionarProducto();
@@ -179,10 +174,6 @@ int main()
                             }
                             p2->setStock(p2->getStock()-cuanto);
                             *pAux=(*pAux)+((*p2)*(cuanto));
-                            if(p2->getStock()-cuanto==0){
-                                nombre=p2->getNombre();
-                                inventario.seAcaboElProducto(nombre);
-                            }
                         }
                         if(cant>=3){
                             p3=inventario.seleccionarProducto();
@@ -199,12 +190,26 @@ int main()
                             p3->setStock(p3->getStock()-cuanto);
                             *pAux=(*pAux)+((*p3)*(cuanto));
 
-                            if(p3->getStock()-cuanto==0){
-                                nombre=p3->getNombre();
-                                inventario.seAcaboElProducto(nombre);
-                            }
+
+
                         }
                         cout<<"El resultado de su compra es: \n"<<*pAux<<endl;
+
+                        if(p1->getStock()==0){
+                            nombre=p1->getNombre();
+                            inventario.seAcaboElProducto(nombre);
+                        }
+                        else{p1=nullptr;}
+                        if(p2->getStock()==0){
+                                nombre=p2->getNombre();
+                                inventario.seAcaboElProducto(nombre);
+                        }
+                        else{p2=nullptr;}
+                        if(p3->getStock()==0){
+                                nombre=p3->getNombre();
+                                inventario.seAcaboElProducto(nombre);
+                        }
+                        else{p3=nullptr;}
 
                         delete pAux;
                         break;
